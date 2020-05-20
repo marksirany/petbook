@@ -1,6 +1,6 @@
 const $noteTitle = $(".note-title");
-const $noteText = $(".note-date");
-const $noteText = $(".note-species");
+const $noteDate = $(".note-date");
+
 
 
 
@@ -43,14 +43,14 @@ var renderActiveNote = function() {
 
   if (activeNote.id) {
     $noteTitle.attr("readonly", true);
-    $noteText.attr("readonly", true);
+    $noteDate.attr("readonly", true);
     $noteTitle.val(activeNote.title);
-    $noteText.val(activeNote.text);
+    $noteDate.val(activeNote.text);
   } else {
     $noteTitle.attr("readonly", false);
-    $noteText.attr("readonly", false);
+    $noteDate.attr("readonly", false);
     $noteTitle.val("");
-    $noteText.val("");
+    $noteDate.val("");
   }
 };
 
@@ -58,7 +58,7 @@ var renderActiveNote = function() {
 var handleNoteSave = function() {
   var newNote = {
     title: $noteTitle.val(),
-    text: $noteText.val()
+    text: $noteDate.val()
   };
 
   saveNote(newNote).then(function(data) {
@@ -101,7 +101,7 @@ var handleNewNoteView = function() {
 // If a note's title or text are empty, hide the save button
 // Or else show it
 var handleRenderSaveBtn = function() {
-  if (!$noteTitle.val().trim() || !$noteText.val().trim()) {
+  if (!$noteTitle.val().trim() || !$noteDate.val().trim()) {
     $saveNoteBtn.show();
   } else {
     $saveNoteBtn.show();
@@ -145,7 +145,7 @@ $noteList.on("click", ".list-group-item", handleNoteView);
 $newNoteBtn.on("click", handleNewNoteView);
 $noteList.on("click", ".delete-note", handleNoteDelete);
 $noteTitle.on("keyup", handleRenderSaveBtn);
-$noteText.on("keyup", handleRenderSaveBtn);
+$noteDate.on("keyup", handleRenderSaveBtn);
 
 // Gets and renders the initial list of notes
 getAndRenderNotes();
