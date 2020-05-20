@@ -1,6 +1,6 @@
 const $noteTitle = $(".note-title");
 const $noteDate = $(".note-date");
-
+const $noteSpecies = $(".note-species");
 
 
 
@@ -44,13 +44,17 @@ var renderActiveNote = function() {
   if (activeNote.id) {
     $noteTitle.attr("readonly", true);
     $noteDate.attr("readonly", true);
+    $noteSpecies.attr("readonly", true);
     $noteTitle.val(activeNote.title);
     $noteDate.val(activeNote.text);
+    $noteSpecies.val(activeNote.text);
   } else {
     $noteTitle.attr("readonly", false);
     $noteDate.attr("readonly", false);
+    $noteSpecies.attr("readonly", false);
     $noteTitle.val("");
     $noteDate.val("");
+    $noteSpecies.val("");
   }
 };
 
@@ -146,6 +150,7 @@ $newNoteBtn.on("click", handleNewNoteView);
 $noteList.on("click", ".delete-note", handleNoteDelete);
 $noteTitle.on("keyup", handleRenderSaveBtn);
 $noteDate.on("keyup", handleRenderSaveBtn);
+$noteSpecies.on("keyup", handleRenderSaveBtn);
 
 // Gets and renders the initial list of notes
 getAndRenderNotes();
