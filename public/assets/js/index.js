@@ -1,6 +1,6 @@
 const $noteTitle = $(".note-title");
 const $noteDate = $(".note-date");
-const $noteSpecies = $(".note-species");
+
 
 
 
@@ -44,17 +44,17 @@ var renderActiveNote = function() {
   if (activeNote.id) {
     $noteTitle.attr("readonly", true);
     $noteDate.attr("readonly", true);
-    $noteSpecies.attr("readonly", true);
+    
     $noteTitle.val(activeNote.title);
     $noteDate.val(activeNote.text);
-    $noteSpecies.val(activeNote.text);
+    
   } else {
     $noteTitle.attr("readonly", false);
     $noteDate.attr("readonly", false);
-    $noteSpecies.attr("readonly", false);
+    
     $noteTitle.val("");
     $noteDate.val("");
-    $noteSpecies.val("");
+    
   }
 };
 
@@ -62,8 +62,8 @@ var renderActiveNote = function() {
 var handleNoteSave = function() {
   var newNote = {
     title: $noteTitle.val(),
-    text: $noteDate.val(),
-    text: $noteSpecies.val()
+    text: $noteDate.val()
+    
   };
 
   saveNote(newNote).then(function(data) {
@@ -105,13 +105,13 @@ var handleNewNoteView = function() {
 
 // If a note's title or text are empty, hide the save button
 // Or else show it
-// var handleRenderSaveBtn = function() {
-//   if (!$noteTitle.val().trim() || !$noteDate.val().trim()) {
-//     $saveNoteBtn.show();
-//   } else {
-//     $saveNoteBtn.show();
-//   }
-// };
+var handleRenderSaveBtn = function() {
+  if (!$noteTitle.val().trim() || !$noteDate.val().trim()) {
+    $saveNoteBtn.show();
+  } else {
+    $saveNoteBtn.show();
+  }
+};
 
 // Render's the list of note titles
 // Changed from notes to notesStringified to indicate it was recieving a stringified JSON.
@@ -151,7 +151,7 @@ $newNoteBtn.on("click", handleNewNoteView);
 $noteList.on("click", ".delete-note", handleNoteDelete);
 $noteTitle.on("keyup", handleRenderSaveBtn);
 $noteDate.on("keyup", handleRenderSaveBtn);
-$noteSpecies.on("keyup", handleRenderSaveBtn);
+
 
 // Gets and renders the initial list of notes
 getAndRenderNotes();
