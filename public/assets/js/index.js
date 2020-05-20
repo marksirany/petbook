@@ -1,5 +1,5 @@
 const $noteTitle = $(".note-title");
-const $noteDate = $(".note-date", ".note-species");
+const $noteDate = $(".note-date, .note-species");
 
 
 
