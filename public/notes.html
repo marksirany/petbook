@@ -40,15 +40,19 @@
           <class class="card-body">
             <h6 class="card-title">Basic Information:</h6>
             <input class="note-title" placeholder="Name" maxlength="28" type="text">
-            <textarea class="note-date" placeholder="Hello, \nThis is multiline example \n\nHave Fun"></textarea>
-            <textarea class="textAreaMultiline" placeholder="Hello, \nThis is multiline example \n\nHave Fun" rows="5"
-              cols="35"></textarea>
             
-            <input class="note-species" placeholder="Species" maxlength="28" type="text">
-            <input class="note-breed" placeholder="Breed" maxlength="28" type="text">
-            <input class="note-gender" placeholder="Gender" maxlength="28" type="text">
-            <input class="note-physical" placeholder="Physical Description" maxlength="28" type="text">
-            <br>
+            <form>
+              <div class="form-group">
+                <label for="formGroupExampleInput">Example label</label>
+                <input type="text" class="note-date" id="formGroupExampleInput" placeholder="Example input placeholder">
+              </div>
+              <div class="form-group">
+                <label for="formGroupExampleInput2">Another label</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
+              </div>
+            </form>
+            
+           
 <!--vet info-->
             <!-- <br>
             <h6 class="card-title">Veterinary Information:</h6>
