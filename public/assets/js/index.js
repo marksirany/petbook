@@ -67,7 +67,7 @@ var handleNoteSave = function() {
   var newNote = {
     title: $noteTitle.val(),
     text: $noteDate.val(),
-    text: $noteSpecies.val()
+    text2: $noteSpecies.val()
     
   };
 
