@@ -1,5 +1,10 @@
 const $noteTitle = $(".note-title");
 const $noteText = $(".note-date");
+const $noteText = $(".note-species");
+
+
+
+
 const $saveNoteBtn = $(".save-note");
 const $newNoteBtn = $(".new-note");
 const $noteList = $(".list-container .list-group");
