@@ -1,6 +1,6 @@
 const $noteTitle = $(".note-title");
 const $noteDate = $(".note-date");
-
+const $noteSpecies = $(".note-species");
 
 
 
@@ -62,7 +62,8 @@ var renderActiveNote = function() {
 var handleNoteSave = function() {
   var newNote = {
     title: $noteTitle.val(),
-    text: $noteDate.val()
+    text: $noteDate.val(),
+    text: $noteSpecies.val()
     
   };
 
@@ -106,7 +107,7 @@ var handleNewNoteView = function() {
 // If a note's title or text are empty, hide the save button
 // Or else show it
 var handleRenderSaveBtn = function() {
-  if (!$noteTitle.val().trim() || !$noteDate.val().trim()) {
+  if (!$noteTitle.val().trim() || !$noteDate.val().trim() || !$noteSpecies.val().trim()) {
     $saveNoteBtn.show();
   } else {
     $saveNoteBtn.show();
