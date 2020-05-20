@@ -95,13 +95,13 @@ var handleNewNoteView = function () {
 
 // If a note's title or text are empty, hide the save button
 // Or else show it
-var handleRenderSaveBtn = function () {
-  if (!$noteTitle.val().trim() || !$noteText.val().trim()) {
-    $saveNoteBtn.show();
-  } else {
-    $saveNoteBtn.show();
-  }
-};
+// var handleRenderSaveBtn = function () {
+//   if (!$noteTitle.val().trim() || !$noteText.val().trim()) {
+//     $saveNoteBtn.show();
+//   } else {
+//     $saveNoteBtn.show();
+//   }
+// };
 
 // Render's the list of note titles
 // Changed from notes to notesStringified to indicate it was recieving a stringified JSON.
